@@ -4,8 +4,14 @@ import Layout from '../components/Layout'
 import Image from '../components/Image'
 import styles from '../styles/Home.module.scss'
 import logo from '../public/logo@2x.png'
+import { browserTracker } from '@pandastack/event-tracker';
+import { useEffect } from 'react';
 
 const Home: React.FC = () => {
+  useEffect(() => {
+      browserTracker.init({ project_id: "f680f8f8-201d-403d-8a33-b06eeb9490dc" });
+    }, []);
+
   return (
     <Layout>
       <NextSeo
